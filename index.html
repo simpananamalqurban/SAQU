@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SAQU - Simpanan Amal Qurban</title>
     <style>
-        /* Mengatur gaya umum halaman */
+        /* Gaya umum halaman */
         * {
             margin: 0;
             padding: 0;
@@ -32,41 +32,40 @@
             font-weight: bold;
         }
 
-        /* Gaya gambar utama */
+        /* Gaya hero section */
         .hero-section {
             width: 100%;
             max-width: 1200px;
             position: relative;
-            overflow: hidden;
-        }
-
-        .hero-section img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* Overlay teks pada gambar utama */
-        .hero-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            text-align: center;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            background-color: #fff;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
+            margin-top: 20px;
+            text-align: center;
         }
 
+        /* Gaya logo */
+        .hero-section img {
+            width: 150px; /* Ubah sesuai ukuran yang diinginkan */
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        /* Gaya judul dan deskripsi di hero */
         .hero-text h1 {
+            color: #3498db;
             font-size: 2.5em;
-            margin-bottom: 10px;
+            margin: 0;
         }
 
         .hero-text p {
             font-size: 1.2em;
-            margin-bottom: 20px;
+            color: #555;
+            margin: 10px 0 20px;
         }
 
         /* Tombol CTA */
@@ -100,11 +99,14 @@
     <!-- Header -->
     <header>SAQU - Simpanan Amal Qurban</header>
 
-    <!-- Hero Section dengan Gambar dan Overlay Teks -->
+    <!-- Hero Section dengan Logo dan Overlay Teks -->
     <div class="hero-section">
-        <img src="gambar-utama.jpg" alt="Gambar Utama">
+        <!-- Logo SAQU -->
+        <img src="logo.png" alt="Logo SAQU">
+        
+        <!-- Judul dan Deskripsi -->
         <div class="hero-text">
-            <h1>Selamat Datang di SAQU</h1>
+            <h1>SAQU</h1>
             <p>Simpanan Amal Qurban yang Aman dan Terpercaya</p>
             <a href="#" class="cta-button">Daftar Sekarang</a>
         </div>
