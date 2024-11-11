@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Pertama Saya</title>
+    <title>Login ke Website Saya</title>
     <style>
-        /* Mengatur gaya body untuk tampilan yang bersih */
+        /* Gaya body untuk tampilan yang bersih */
         body {
             background-color: #f9f9f9;
             color: #333;
@@ -17,14 +17,6 @@
             align-items: center;
             min-height: 100vh;
             justify-content: center;
-        }
-
-        /* Gaya heading */
-        h1 {
-            color: #3498db;
-            font-size: 2em;
-            text-align: center;
-            margin-bottom: 20px;
         }
 
         /* Gaya form login */
@@ -81,21 +73,21 @@
     </div>
 
     <script>
-        // Fungsi login untuk memvalidasi username dan password
         function login() {
-            // Mendapatkan nilai input dari form
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
             const message = document.getElementById('message');
 
-            // Username dan password yang benar
             const correctUsername = "user";
             const correctPassword = "1234";
 
-            // Memeriksa apakah username dan password cocok
             if (username === correctUsername && password === correctPassword) {
                 message.style.color = 'green';
-                message.textContent = "Login berhasil! Selamat datang.";
+                message.textContent = "Login berhasil! Mengalihkan...";
+                // Tunggu sebentar lalu redirect ke halaman depan
+                setTimeout(() => {
+                    window.location.href = "halaman_depan.html";
+                }, 1500); // Tunggu 1,5 detik sebelum pindah halaman
             } else {
                 message.style.color = 'red';
                 message.textContent = "Login gagal! Username atau password salah.";
