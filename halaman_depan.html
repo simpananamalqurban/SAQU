@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal Pendaftaran Sekolah</title>
+    <title>SAQU (Simpanan Amal Qurban)</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -24,11 +24,19 @@
             background-color: #333;
             color: white;
             padding: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
         
         header h1 {
-            text-align: center;
             margin: 0;
+            flex: 1;
+        }
+        
+        header img {
+            height: 50px;
+            margin-right: 20px;
         }
         
         header nav ul {
@@ -36,6 +44,7 @@
             text-align: center;
             list-style: none;
             margin: 0;
+            flex: 2;
         }
         
         header nav ul li {
@@ -90,6 +99,7 @@
     <header>
         <div class="container">
             <h1>Portal Pendaftaran Sekolah</h1>
+            <img src="logo.png" alt="Logo Sekolah">
             <nav>
                 <ul>
                     <li><a href="#home">Home</a></li>
