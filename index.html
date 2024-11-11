@@ -3,96 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login ke Website Saya</title>
+    <title>SAQU - Simpanan Amal Qurban</title>
     <style>
-        /* Gaya body untuk tampilan yang bersih */
-        body {
-            background-color: #f9f9f9;
-            color: #333;
-            font-family: Arial, sans-serif;
+        /* Mengatur gaya umum halaman */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            color: #333;
             display: flex;
             flex-direction: column;
             align-items: center;
-            min-height: 100vh;
-            justify-content: center;
         }
 
-        /* Gaya form login */
-        .login-form {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            max-width: 300px;
+        /* Header */
+        header {
             width: 100%;
-            text-align: center;
-        }
-
-        .login-form input[type="text"],
-        .login-form input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 1em;
-        }
-
-        .login-form button {
-            width: 100%;
-            padding: 10px;
+            padding: 15px;
             background-color: #3498db;
             color: white;
-            border: none;
-            border-radius: 4px;
-            font-size: 1em;
-            cursor: pointer;
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: bold;
         }
 
-        .login-form button:hover {
-            background-color: #2980b9;
+        /* Gaya gambar utama */
+        .hero-section {
+            width: 100%;
+            max-width: 1200px;
+            position: relative;
+            overflow: hidden;
         }
 
-        .message {
-            margin-top: 15px;
+        .hero-section img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Overlay teks pada gambar utama */
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+        }
+
+        .hero-text h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .hero-text p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        /* Tombol CTA */
+        .cta-button {
+            padding: 10px 20px;
             font-size: 1em;
+            background-color: #e74c3c;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #c0392b;
+        }
+
+        /* Gaya responsif */
+        @media (max-width: 768px) {
+            .hero-text h1 {
+                font-size: 2em;
+            }
+
+            .hero-text p {
+                font-size: 1em;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Login ke Website Saya</h1>
-    
-    <!-- Form Login -->
-    <div class="login-form">
-        <input type="text" id="username" placeholder="Username">
-        <input type="password" id="password" placeholder="Password">
-        <button onclick="login()">Login</button>
-        <p class="message" id="message"></p>
+    <!-- Header -->
+    <header>SAQU - Simpanan Amal Qurban</header>
+
+    <!-- Hero Section dengan Gambar dan Overlay Teks -->
+    <div class="hero-section">
+        <img src="gambar-utama.jpg" alt="Gambar Utama">
+        <div class="hero-text">
+            <h1>Selamat Datang di SAQU</h1>
+            <p>Simpanan Amal Qurban yang Aman dan Terpercaya</p>
+            <a href="#" class="cta-button">Daftar Sekarang</a>
+        </div>
     </div>
 
-    <script>
-        function login() {
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            const message = document.getElementById('message');
-
-            const correctUsername = "user";
-            const correctPassword = "1234";
-
-            if (username === correctUsername && password === correctPassword) {
-                message.style.color = 'green';
-                message.textContent = "Login berhasil! Mengalihkan...";
-                // Tunggu sebentar lalu redirect ke halaman depan
-                setTimeout(() => {
-                    window.location.href = "halaman_depan.html";
-                }, 1500); // Tunggu 1,5 detik sebelum pindah halaman
-            } else {
-                message.style.color = 'red';
-                message.textContent = "Login gagal! Username atau password salah.";
-            }
-        }
-    </script>
+    <!-- Section Penjelasan (opsional) -->
+    <section style="padding: 20px; text-align: center; max-width: 800px;">
+        <h2>Tentang SAQU</h2>
+        <p>SAQU adalah platform simpanan amal untuk qurban yang memudahkan Anda dalam beramal. Bergabung bersama kami untuk berbagi kebahagiaan kepada sesama.</p>
+    </section>
 </body>
 </html>
