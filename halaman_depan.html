@@ -1,81 +1,138 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal Pendaftaran</title>
+    <title>Portal Pendaftaran Sekolah</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>Selamat Datang di Portal Pendaftaran</h1>
+        <div class="container">
+            <h1>Portal Pendaftaran Sekolah</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">Tentang Kami</a></li>
+                    <li><a href="#register">Daftar</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#register">Register</a></li>
-        </ul>
-    </nav>
-    <section id="home">
-        <h2>Home</h2>
-        <p>Informasi umum tentang sekolah dan pendaftaran.</p>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>Selamat Datang di Portal Pendaftaran</h2>
+            <p>Kami menyediakan informasi lengkap tentang pendaftaran siswa baru.</p>
+            <a href="#register" class="btn">Daftar Sekarang</a>
+        </div>
     </section>
+
     <section id="about">
-        <h2>About</h2>
-        <p>Detail tentang sekolah, sejarah, dan misi.</p>
+        <div class="container">
+            <h2>Tentang Kami</h2>
+            <p>Detail tentang sekolah, sejarah, dan misi kami untuk mencetak generasi berprestasi.</p>
+        </div>
     </section>
+
     <section id="register">
-        <h2>Register</h2>
-        <form>
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name"><br><br>
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email"><br><br>
-            <input type="submit" value="Register">
-        </form>
+        <div class="container">
+            <h2>Pendaftaran</h2>
+            <form>
+                <label for="name">Nama:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="phone">Telepon:</label>
+                <input type="tel" id="phone" name="phone" required>
+                <input type="submit" value="Daftar">
+            </form>
+        </div>
     </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Kontak</h2>
+            <p>Jika Anda memiliki pertanyaan, jangan ragu untuk menghubungi kami.</p>
+        </div>
+    </section>
+
     <footer>
-        <p>&copy; 2024 Sekolah Kami</p>
+        <div class="container">
+            <p>&copy; 2024 Sekolah Kami. All rights reserved.</p>
+        </div>
     </footer>
 </body>
 </html>
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 header {
     background-color: #333;
     color: white;
-    text-align: center;
-    padding: 1em;
+    padding: 10px 0;
 }
 
-nav ul {
-    background-color: #444;
-    overflow: hidden;
-    color: white;
-    padding: 0;
+header h1 {
     text-align: center;
     margin: 0;
 }
 
-nav ul li {
-    display: inline;
-    padding: 20px;
+header nav ul {
+    padding: 0;
+    text-align: center;
+    list-style: none;
+    margin: 0;
 }
 
-nav ul li a {
+header nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+header nav ul li a {
     text-decoration: none;
     color: white;
-    padding: 15px 20px;
+    padding: 10px 15px;
+    display: inline-block;
+}
+
+.hero {
+    background-color: #555;
+    color: white;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.hero .btn {
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.hero .btn:hover {
+    background-color: #ddd;
 }
 
 section {
-    margin: 20px;
+    margin: 20px 0;
     padding: 20px;
     background-color: white;
     border-radius: 5px;
