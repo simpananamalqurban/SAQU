@@ -115,6 +115,13 @@
         .login-container a:hover {
             text-decoration: underline;
         }
+
+        /* Pesan login */
+        .message {
+            color: red;
+            margin-top: 15px;
+            font-size: 1em;
+        }
     </style>
 </head>
 <body>
@@ -129,12 +136,47 @@
     <!-- Kontainer Form Login -->
     <div class="login-container">
         <h2>Masuk ke Akun Anda</h2>
-        <form action="#" method="post">
-            <input type="text" name="username" placeholder="Username" required>
-            <input type="password" name="password" placeholder="Password" required>
+        <form onsubmit="return login()">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
             <button type="submit">Login</button>
+            <p class="message" id="message"></p>
         </form>
         <p>Belum punya akun? <a href="daftar.html">Daftar Sekarang</a></p>
     </div>
+
+    <script>
+        // Fungsi login dengan dua akun
+        function login() {
+            // Dapatkan input dari pengguna
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const message = document.getElementById("message");
+
+            // Daftar akun yang valid
+            const accounts = [
+                { username: "tahmid", password: "12345" },
+                { username: "harun", password: "12345" }
+            ];
+
+            // Cek apakah username dan password cocok dengan akun yang ada
+            const isValid = accounts.some(account => account.username === username && account.password === password);
+
+            if (isValid) {
+                message.style.color = "green";
+                message.textContent = "Login berhasil! Mengalihkan...";
+                // Alihkan ke halaman depan setelah berhasil login
+                setTimeout(() => {
+                    window.location.href = "halaman_depan.html";
+                }, 1500);
+            } else {
+                message.style.color = "red";
+                message.textContent = "Username atau password salah!";
+            }
+
+            return false; // Mencegah form dari reload
+        }
+    </script>
 </body>
 </html>
+
